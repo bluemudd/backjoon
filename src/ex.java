@@ -28,28 +28,19 @@ class ex {
         while (true) {
             y = y + dy[turn];
             x = x + dx[turn];
-            if (y < 0) {
+            if (y < 0 || x < 0) {
                 y = y - dy[turn];
-                turn = turn + 1;
-                x = x + dx[turn];
-                y = y + dy[turn];
-            } else if (x < 0) {
                 x = x - dx[turn];
                 turn = turn + 1;
                 x = x + dx[turn];
                 y = y + dy[turn];
             }
-            if (y == n) {
+            else if (y == n || x == n) {
+                x = x - dx[turn];
                 y = y - dy[turn];
                 turn = turn + 1;
                 x = x + dx[turn];
                 y = y + dy[turn];
-            } else if (x == n) {
-                x = x - dx[turn];
-                turn = turn + 1;
-                x = x + dx[turn];
-                y = y + dy[turn];
-
             }
             if(visited[y][x]==true){
                 x = x - dx[turn];
