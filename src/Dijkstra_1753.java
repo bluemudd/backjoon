@@ -4,17 +4,17 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 
-class Node implements Comparable<Node>{
-    int end, weight;
-    public Node(int end, int weight){
-        this.end=end;
-        this.weight = weight;
-    }
-    @Override
-    public int compareTo(Node o){
-        return weight - o.weight;
-    }
-}
+//class Node implements Comparable<Node>{
+//    int end, weight;
+//    public Node(int end, int weight){
+//        this.end=end;
+//        this.weight = weight;
+//    }
+//    @Override
+//    public int compareTo(Node o){
+//        return weight - o.weight;
+//    }
+//}
 public class Dijkstra_1753 {
     private static final int INF = 100_000_000;
     static int V, E, K;
@@ -48,10 +48,10 @@ public class Dijkstra_1753 {
         queue.add(new Node(start,0));
         dist[start]= 0;
         while(!queue.isEmpty()){
-            for(int i=0; i<dist.length; i++){
-                System.out.print("["+dist[i]+"] ");
-            }
-            System.out.println("");
+//            for(int i=0; i<dist.length; i++){
+//                System.out.print("["+dist[i]+"] ");
+//            }
+//            System.out.println("");
             Node curNode = queue.poll();
             int cur = curNode.end;
             if(check[cur] ==true) continue;
